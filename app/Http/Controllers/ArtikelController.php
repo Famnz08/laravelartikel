@@ -41,6 +41,10 @@ class ArtikelController extends Controller
         $artikel->update($request->except('_token','Edit'));
         return redirect('artikel');
     }
-
+            public function destroy($id){
+        $artikel= Artikel::find($id);
+        $artikel->delete();
+        return redirect('artikel');
+    }
 
 }
